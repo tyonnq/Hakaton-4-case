@@ -140,7 +140,7 @@ function updateMusicButton(){
 (function initMusic(){
  const b=document.createElement('button');
  b.id='musicToggle';b.type='button';
- b.style.cssText='position:fixed;right:68px;bottom:14px;z-index:50;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:20px;cursor:pointer;box-shadow:var(--sh)';
+ b.style.cssText='position:fixed;left:68px;bottom:calc(18px+env(safe-area-inset-bottom, 0px));z-index:50;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:20px;cursor:pointer;box-shadow:var(--sh)';
  b.onclick=()=>{
   musicOff=!musicOff;
   try{localStorage.setItem(MUSIC_OFF_KEY,musicOff?'1':'0');}catch(e){}
