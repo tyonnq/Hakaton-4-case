@@ -78,14 +78,14 @@ const sfx={
   if(sfx.voice){try{sfx.voice.pause();}catch(e){}}
  },
  stopLoop(){sfx.pauseVoice();sfx.loopGroup=null;},
- // Уход с экрана: звук состояния выключается.
+
  stop(){sfx.stopLoop();sfx.lastEmotion=null;},
- // Экран результата: победа (один раз) или звук состояния по кругу.
+ 
  result(R){
   if(R.pass){sfx.stopLoop();return sfx.play('win');}
   sfx.startLoop(R.emotion==='cold'?'cold':R.emotion==='hot'?'hot':'sad');
  },
- // Экран выбора одежды: звук меняется вместе с состоянием персонажа.
+
  preview(emotion){
   if(emotion===sfx.lastEmotion)return;
   sfx.lastEmotion=emotion;
@@ -121,7 +121,7 @@ const sfx={
 })();
 
 
-/* Фоновая музыка: отдельное управление, не зависит от эффектов. */
+
 const MUSIC_OFF_KEY='meteo_music_off';
 const bgMusic=new Audio('sounds/music/background.mp3');
 bgMusic.loop=true;
